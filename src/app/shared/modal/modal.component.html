@@ -1,0 +1,22 @@
+<div
+  id="myModal"
+  class="modal fade justify-content-center align-items-center"
+  [ngClass]="{ show: showModal }"
+  [ngStyle]="{ display: showModal ? 'flex' : 'none' }"
+  aria-hidden="!showModal"
+  (click)="closeModal()"
+>
+  <div class="modal-dialog" (click)="$event.stopPropagation()">
+    <div class="modal-content">
+      <h3>Delete comment</h3>
+      <p>
+        Are you sure you want to delete this comment? This will remove the
+        comment and can’t be undone.
+      </p>
+      <div class="modal__footer d-flex justify-content-between">
+        <button (click)="closeModal()">No, Cancel</button>
+        <button (click)="confirmDelete()">Yes, Delete</button>
+      </div>
+    </div>
+  </div>
+</div>

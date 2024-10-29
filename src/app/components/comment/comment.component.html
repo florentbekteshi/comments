@@ -1,0 +1,102 @@
+<div class="main">
+  <div class="main-content d-flex align-items-start w-100 gap-4">
+    <div
+      class="d-flex main-mobile-add align-items-center justify-content-between"
+    >
+      <div
+        class="main-add-content d-flex flex-column align-items-center justify-content-between"
+      >
+        <button (click)="incrementScore()">
+          <img src="/images/icon-plus.svg" alt="icon-plus" />
+        </button>
+        <p>{{ replyCount }}</p>
+        <button (click)="decrementScore()">
+          <img src="/images/icon-minus.svg" alt="icon-minus" />
+        </button>
+      </div>
+      <div class="profile-mobile">
+        <div *ngIf="isActive" class="profile-action">
+          <button (click)="handleDeleteClick()">
+            <img src="/images/icon-delete.svg" />
+            <p>Delete</p>
+          </button>
+          <button (click)="onEdit(commentId!, commentText)">
+            <img src="/images/icon-edit.svg" />
+            <p>Edit</p>
+          </button>
+        </div>
+        <button
+          *ngIf="!isActive"
+          class="main-profile-reply d-flex gap-2 align-items-center"
+          (click)="handleReplyClick()"
+        >
+          <img src="/images/icon-reply.svg" alt="icon-reply" />
+          <p>Reply</p>
+        </button>
+      </div>
+    </div>
+    <div class="main-profile w-100">
+      <div class="main-profile-header d-flex justify-content-between">
+        <div class="main-profile-name d-flex gap-3 align-items-center">
+          <img [src]="avatarUrl" [alt]="username" />
+          <div class="d-flex align-items-center">
+            <p>{{ username }}</p>
+            <div
+              *ngIf="isActive"
+              class="d-flex justify-content-center align-items-center"
+            >
+              <p>you</p>
+            </div>
+          </div>
+          <p class="timeAgo">{{ timeAgo }}</p>
+        </div>
+        <div class="profile-reply-action">
+          <div *ngIf="isActive" class="profile-action">
+            <button (click)="handleDeleteClick()">
+              <img src="/images/icon-delete.svg" />
+              <p>Delete</p>
+            </button>
+            <button (click)="onEdit(commentId!, commentText)">
+              <img src="/images/icon-edit.svg" />
+              <p>Edit</p>
+            </button>
+          </div>
+          <button
+            *ngIf="!isActive"
+            class="main-profile-reply d-flex gap-2 align-items-center"
+            (click)="handleReplyClick()"
+          >
+            <img src="/images/icon-reply.svg" alt="icon-reply" />
+            <p>Reply</p>
+          </button>
+        </div>
+      </div>
+      <div class="main-profile-comment">
+        <ng-container
+          *ngIf="isActive && editingId === commentId; else displayMode"
+        >
+          <textarea
+            [(ngModel)]="newParagraph"
+            (keydown)="onEnter($event, commentId)"
+            [attr.placeholder]="commentText || 'Enter your comment'"
+            type="text"
+          ></textarea>
+          <div>
+            <button (click)="updateParagraph(commentId!)">Update</button>
+          </div>
+        </ng-container>
+        <ng-template #displayMode>
+          <span class="text-color" (click)="onEdit(commentId!, commentText)">
+            {{ commentText }}
+          </span>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+
+  <app-modal
+    [showModal]="showModal"
+    (close)="cancelDelete()"
+    (onDelete)="confirmDelete()"
+  ></app-modal>
+</div>

@@ -1,0 +1,75 @@
+.addComment{
+  padding:24px;
+  background-color: #FFF;
+  border-radius: 8px;
+  gap:16px;
+  .mobile-row{
+    img{
+      display: none;
+    }
+    button{
+      width: 104px;
+      height: 48px;
+      background-color: #5357B6;
+      color: #FFF;
+      border-radius: 8px;
+      border: none;
+      text-transform: uppercase;
+    }
+  }
+  img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+  textarea{
+    flex-grow: 1;
+    height: 96px;
+    resize: none;
+    border: 1px solid #E9EBF0;
+    border-radius: 8px;
+    color: #67727E;
+    outline: none;
+  }
+  textarea:focus{
+    border-color: #5357B6;
+  }
+
+
+}
+
+@media (max-width: 768px) {
+  .addComment {
+    flex-direction: column;
+    gap: 16px;
+    img{
+      display: none;
+    }
+    textarea {
+      width: 100%;
+      margin-bottom: 16px;
+      order: 1;
+      margin-bottom: 0;
+    }
+    .mobile-row{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      order: 2;
+      width: 100%;
+      img{
+        display: flex;
+      }
+      button{
+        width: 104px;
+        height: 48px;
+        background-color: #5357B6;
+        color: #FFF;
+        border-radius: 8px;
+        border: none;
+        text-transform: uppercase;
+      }
+    }
+
+  }
+}

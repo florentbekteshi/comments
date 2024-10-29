@@ -1,0 +1,12 @@
+<div class="addComment d-flex justify-content-between align-items-start w-100">
+  <img [src]="image" alt="Profile" />
+  <textarea
+    [(ngModel)]="replyText"
+    placeholder="Add a comment…"
+    class="px-3 py-2"
+  ></textarea>
+  <div class="mobile-row">
+    <img [src]="image" alt="Profile" />
+    <button (click)="sendReply()">{{ isReply ? "Reply" : "Send" }}</button>
+  </div>
+</div>

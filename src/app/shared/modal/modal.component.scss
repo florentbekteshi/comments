@@ -1,0 +1,47 @@
+.modal {
+  background-color: rgba(0, 0, 0, 0.5);
+  .modal-dialog{
+    width: 400px;
+    .modal-content{
+      padding: 32px;
+      h3{
+        font-size: 24px;
+        color: #334253;
+        margin-bottom: 20px;
+      }
+      p{
+        color: #67727E;
+        margin-bottom: 20px;
+      }
+      button{
+        width: 161px;
+        height: 48px;
+        color: #FFF;
+        border: 0;
+        border-radius: 8px;
+        text-transform: uppercase;
+      }
+      button:nth-child(1){
+        background-color: #67727E;
+      }
+      button:nth-child(2){
+        background-color: #ED6368;
+      }
+    }
+  }
+}
+@media (max-width: 768px) {
+  .modal{
+    .modal-dialog{
+      width: 100%;
+      max-width: calc(100% - 32px);
+      .modal-content{
+        padding: 24px 28px;
+        button{
+          width: 138px;
+        }
+      }
+
+    }
+  }
+}

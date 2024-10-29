@@ -1,0 +1,185 @@
+.main{
+  .main-content{
+    padding: 24px;
+    background-color: #FFF;
+    border-radius: 8px;
+    .profile-mobile{
+      display: none;
+    }
+    .profile-action{
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      button{
+        background-color: #FFF;
+        border: 0;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      button:nth-child(1){
+        p{
+          color: #ED6368;
+          font-weight: 500;
+        }
+      }
+      button:nth-child(2){
+        p{
+          color: #5357B6;
+          font-weight: 500;
+        }
+      }
+    }
+    .main-add-content{
+      min-width: 40px;
+      height: 100px;
+      background-color: #F5F6FA;
+      border-radius: 10px;
+      button{
+        border: 0;
+        background: 0;
+        width: fit-content;
+        background-color: unset;
+      }
+      p{
+        color: #5357B6;
+        font-weight: 500;
+      }
+    }
+    .main-profile{
+      .main-profile-header{
+        margin-bottom: 15px;
+        .main-profile-name{
+          img{
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+          }
+          .timeAgo{
+            color: #67727E;
+          }
+          div{
+            gap:8px;
+            p{
+              color: #334253;
+              font-weight: 500;
+            }
+            div{
+              width: 36px;
+              height: 19px;
+              border-radius: 2px;
+              background-color: #5357B6;
+              p{
+                color: #FFF;
+                font-size: 13px;
+              }
+            }
+          }
+        }
+        .profile-action{
+          display: flex;
+          align-items: center;
+          gap: 24px;
+          button{
+            background-color: #FFF;
+            border: 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+          }
+          button:nth-child(1){
+            p{
+              color: #ED6368;
+              font-weight: 500;
+            }
+          }
+          button:nth-child(2){
+            p{
+              color: #5357B6;
+              font-weight: 500;
+            }
+          }
+        }
+        .main-profile-reply{
+          color: #5357B6;
+          font-weight: 500;
+          border: 0;
+          background-color: unset;
+        }
+      }
+      .main-profile-comment{
+
+        textarea{
+          resize: none;
+          width: 100%;
+          border-radius: 8px;
+          height: 124px;
+          border: 1px solid #5357B6;
+          padding: 12px 24px;
+          font-size: 16px;
+          outline: none;
+        }
+        textarea:focus{
+          border-color: #5357B6;
+        }
+        p{
+          color: #67727E;
+        }
+        div{
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
+          button{
+            width: 104px;
+            height: 48px;
+            margin-top: 16px;
+            background-color: #5357B6;
+            text-transform: uppercase;
+            font-weight: 500;
+            border-radius: 8px;
+            border: 0;
+            color:#FFF;
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 768px) {
+  .main-content {
+    flex-direction: column-reverse;
+    width: 100% !important;
+    padding: 16px !important;
+    gap: 16px !important;
+    .main-mobile-add {
+      width: 100%;
+      .profile-mobile{
+        display: flex !important;
+      }
+      .main-add-content{
+        display: flex !important;
+        flex-direction: row !important;
+        width: 100px;
+        height: 40px !important;
+        gap: 10px;
+        justify-content: center !important;
+      }
+    }
+    .main-profile{
+      .main-profile-header{
+        margin-bottom: 16px;
+      }
+      .profile-reply-action{
+        display: none;
+      }
+    }
+    .main-profile-reply{
+      color: #5357B6;
+      font-weight: 500;
+      border: 0;
+      background-color: unset;
+    }
+
+  }
+}
